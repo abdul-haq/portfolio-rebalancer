@@ -157,7 +157,7 @@ docker-compose up --build
 
 Deployed on AWS Lambda for serverless scaling.
 
-**Live URL:** https://xxxxx.execute-api.eu-central-1.amazonaws.com/dev
+**Live URL:** https://5w32ghppi9.execute-api.eu-central-1.amazonaws.com/dev/
 
 ```bash
 # Deploy to AWS
