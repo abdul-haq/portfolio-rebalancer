@@ -1,0 +1,32 @@
+service: portfolio-rebalancer-api
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-central-1
+  stage: ${opt:stage, 'dev'}
+  timeout: 30
+  memorySize: 512
+
+functions:
+  api:
+    handler: src/lambda.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline
+
+package:
+  exclude:
+    - .git/**
+    - docker-compose.yml
+    - Dockerfile
+    - .env
